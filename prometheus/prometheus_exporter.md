@@ -61,3 +61,4 @@ _Note: If port 9100 is unreachable_
 sudo ufw allow 9100
 sudo iptables -I INPUT -p tcp -m tcp --dport 9100 -j ACCEPT
 ```
+[Refe](https://ourcodeworld.com/articles/read/1686/how-to-install-prometheus-node-exporter-on-ubuntu-2004)
