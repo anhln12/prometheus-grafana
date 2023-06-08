@@ -4,7 +4,9 @@
 
 [available for Linux in the official Prometheus website here] (https://prometheus.io/download/#node_exporter)
 
-```wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz```
+```
+wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
+```
 
 **2. Extract Node Exporter and move binary **
 
@@ -20,7 +22,41 @@ rm -rf ./node_exporter-1.3.1.linux-amd64
   
 **3. Create Node Exporter User**
 
-  ```
-  sudo useradd --no-create-home --shell /bin/false node_exporter
-  udo chown node_exporter:node_exporter /usr/local/bin/node_exporter
-  ```
+```
+sudo useradd --no-create-home --shell /bin/false node_exporter
+udo chown node_exporter:node_exporter /usr/local/bin/node_exporter
+```
+
+**4. Create and start the Node Exporter service**
+
+```
+nano /etc/systemd/system/node_exporter.service
+
+[Unit]
+Description=Node Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=node_exporter
+Group=node_exporter
+Type=simple
+ExecStart=/usr/local/bin/node_exporter
+
+[Install]
+WantedBy=multi-user.target
+```
+
+```
+sudo systemctl daemon-reload
+```
+
+**5. Test the Node Exporter service**
+
+http://your_server_ip:9100/metrics
+
+Note: If port 9100 is unreachable
+```
+sudo ufw allow 9100
+sudo iptables -I INPUT -p tcp -m tcp --dport 9100 -j ACCEPT
+```
