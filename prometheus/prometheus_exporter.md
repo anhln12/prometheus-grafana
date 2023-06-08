@@ -8,7 +8,7 @@
 wget https://github.com/prometheus/node_exporter/releases/download/v1.3.1/node_exporter-1.3.1.linux-amd64.tar.gz
 ```
 
-**2. Extract Node Exporter and move binary **
+**2. Extract Node Exporter and move binary**
 
 ```
 tar xvf node_exporter-1.3.1.linux-amd64.tar.gz
@@ -55,7 +55,8 @@ sudo systemctl daemon-reload
 
 http://your_server_ip:9100/metrics
 
-Note: If port 9100 is unreachable
+_Note: If port 9100 is unreachable_
+
 ```
 sudo ufw allow 9100
 sudo iptables -I INPUT -p tcp -m tcp --dport 9100 -j ACCEPT
