@@ -51,6 +51,10 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 ```
 
+```
+sudo systemctl start node_exporter
+```
+
 **5. Test the Node Exporter service**
 
 http://your_server_ip:9100/metrics
