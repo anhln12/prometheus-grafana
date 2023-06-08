@@ -24,7 +24,7 @@ rm -rf ./node_exporter-1.3.1.linux-amd64
 
 ```
 sudo useradd --no-create-home --shell /bin/false node_exporter
-udo chown node_exporter:node_exporter /usr/local/bin/node_exporter
+sudo chown node_exporter:node_exporter /usr/local/bin/node_exporter
 ```
 
 **4. Create and start the Node Exporter service**
