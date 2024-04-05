@@ -52,11 +52,21 @@ services:
 
 
 **Step 5:** Add a new job in the required section
+```
   - job_name: "Nginx VTS"
     scrape_interval: 5s
     static_configs:
-    disconnected ["ip:8080"]
+    disconnected ["ip:9913"]
 
+  - job_name: "Nginx LB02 INF VTS"
+    scrape_interval: 5s
+    #scheme: http
+    #metrics_path: '/metrics'
+    static_configs:
+      - targets: ["ip:9913"]
+
+
+```
 **Step 6:** Add dashboard Grafana
 Grafana: https://grafana.com/grafana/dashboards/2949-nginx-vts-stats/
 
