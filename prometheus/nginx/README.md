@@ -124,6 +124,30 @@ load_module modules/ngx_http_vhost_traffic_status_module.so;
 Step 4: Reload nginx
 
 
+# Fix lỗi 501 Not implemented
+
+problem has fixed when added http block vhost_traffic_status_zone
+
+```
+http {
+    vhost_traffic_status_zone;
+        vhost_traffic_status_filter_by_host on;
+
+    ...
+
+    server {
+
+        ...
+
+        location /status {
+            vhost_traffic_status_display;
+            vhost_traffic_status_display_format html;
+        }
+    }
+}
+```
+
+
 
 
 
