@@ -24,7 +24,7 @@ docker run -d --name grafana -p 9000:3000 --user "$(id -u)" -e GF_SECURITY_ADMIN
 docker exec -it <name of grafana container> grafana-cli admin reset-admin-password <fill in password>
 ```
 
-**Refe:**
+**Refer:**
 
 https://grafana.com/docs/grafana/latest/setup-grafana/installation/docker/
 
