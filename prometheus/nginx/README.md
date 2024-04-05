@@ -147,6 +147,12 @@ http {
 }
 ```
 
+**Kết quả:**
+
+http://172.30.12.52:8088/status/
+<img width="590" alt="image" src="https://github.com/anhln12/prometheus-grafana/assets/18412583/ef1b155f-1a0d-4e52-85c8-299764226d36">
+
+
 
 
 
