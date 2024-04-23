@@ -48,9 +48,9 @@ services:
   nginx-vts-exporter:
     image: sophos/nginx-vts-exporter
     environment:
-      - NGINX_STATUS=http://ip:8080/status/format/json
+      - NGINX_STATUS=http://10.30.18.61:8088/status/format/json
     ports:
-      - 9913:9913
+      - 172.30.18.61:9913:9913
     restart: always
 ```
 
