@@ -173,8 +173,6 @@ sudo service prometheus_bot stop
 sudo service prometheus_bot status
 ```
 
-**4. Cấu hình alertmanager**
-Bây giờ ta sửa tệp /usr/local/alertmanager/alertmanager.yml
 
 
 
