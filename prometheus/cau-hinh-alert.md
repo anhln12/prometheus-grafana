@@ -1,6 +1,6 @@
 **Cấu hình Alert trong prometheus**
 
-1. Cài đặt AlerManager trên serverr Promethus
+**1. Cài đặt AlerManager trên serverr Promethus**
 
 Bước 1: Download alert_manager
 ```
