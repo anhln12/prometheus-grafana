@@ -9,18 +9,22 @@ vim /etc/nginx/conf.d/status.conf
 
 ```
 server {
-    listen 8080;
+    #listen 8088;
     # Optionally: allow access only from localhost
-    # listen 127.0.0.1:8080;
+    listen 10.30.18.61:8088;
 
     server_name _;
-
+    location /metrics {
+    stub_status on;
+    }
     location /status {
         #stub_status;
+        #               auth_basic "Restricted";
+        #       auth_basic_user_file /etc/nginx/.htpasswd;
         vhost_traffic_status_display;
         vhost_traffic_status_display_format html;
-        allow 127.0.0.1;        #only allow requests from localhost
-        deny all;               #deny all other hosts
+        #allow 127.0.0.1;        #only allow requests from localhost
+        #deny all;               #deny all other hosts
     }
 }
 ```
