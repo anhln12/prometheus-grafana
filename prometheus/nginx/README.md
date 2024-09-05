@@ -164,7 +164,7 @@ http://172.30.12.52:8088/status/
 
 
 Refer:
-https://grafana.com/grafana/dashboards/11967-nginx-vts-sts-performance-metrics/
+[https://grafana.com/grafana/dashboards/11967-nginx-vts-sts-performance-metrics/](https://grafana.com/grafana/dashboards/2949-nginx-vts-stats/)
 
 
 
